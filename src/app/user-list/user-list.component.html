@@ -1,4 +1,15 @@
-<p>
-  <li *ngFor="let name of names">Hello {{ name }}</li>  <!-- names배열의 각 요소를 반복하며 name이라는 지역변수에 지정한다, 21p -->
+<ul>
+  <!-- <li *ngFor="let name of names">Hello {{ name }}</li> --> <!-- names배열의 각 요소를 반복하며 name이라는 지역변수에 지정한다, 21p -->
+  
+  <!-- 아래랑 결과 같음.
+  <li *ngFor="let name of names">  
+    <app-user-item [name]="name"></app-user-item>
+  </li> -->
+
+  <li *ngFor="let individualUserName of names">
+    <app-user-item [name]="individualUserName"></app-user-item>   <!-- []대괄호 문법을 이용하여 UserItemComponent의(user-item) name에 전달한다,  -->
+  </li>
+
   <!-- <li *ngFor="let foobar of names">Hello {{ foobar }}</li> -->
-</p>
+  
+</ul>
